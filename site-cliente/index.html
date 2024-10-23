@@ -6,65 +6,217 @@
     <title>Objetivo do Sistema - COP-30</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1920') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: background 0.3s;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .cta-button:hover {
+            background: #45a049;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Hospedagem COP-30</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Início</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Hospedagem COP-30</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="detalhes-acomodacoes.html">Acomodação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reserva.html">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagamento.html">Pagamento</a>
+                    </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="detalhes-acomodacoes.html">Acomodação</a>
+                    <a class="nav-link" href="suporte.html">Suporte</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reserva.html">Reservas</a>
+                    <a class="nav-link" href="cliente.html">Cliente</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pagamento.html">Pagamento</a>
-                </li>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="suporte.html">Suporte</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="cliente.html">Cliente</a>
-            </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Objetivo do Sistema -->
-    <section id="objetivo" class="container my-5">
-        <h2 class="text-center mb-4">Objetivo do site</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <p>Belém do Pará será sede da COP-30, um evento global que atrairá milhares de visitantes. A infraestrutura local é insuficiente para acomodar todos, portanto, um software é necessário para integrar alternativas de hospedagem como:</p>
-                <ul>
-                    <li><i class="fas fa-hotel"></i> Hotéis</li>
-                    <li><i class="fas fa-ship"></i> Navios adaptados</li>
-                    <li><i class="fas fa-school"></i> Escolas e centros comunitários</li>
-                    <li><i class="fas fa-home"></i> Airbnb e pousadas temporárias</li>
                 </ul>
             </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div class="col-md-6">
-                <img src="img\cop-30.jpg" alt="Belém COP-30" class="img-fluid">
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>COP30 Amazônia 2025</h1>
+            <p>Seja bem-vindo à página oficial de hospedagem para a COP30, a maior conferência sobre mudanças climáticas
+                do mundo, que será realizada em Belém do Pará em 2025. Encontre aqui as melhores opções de hospedagem e
+                prepare-se para fazer parte deste momento histórico na proteção do nosso planeta.</p>
+            <a href="detalhes-acomodacoes.html" class="cta-button">Veja nossas ofertas</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Hotéis Parceiros</h3>
+                <p>Rede de hotéis credenciados com condições especiais para participantes do evento.</p>
             </div>
-        </div>
-    </section>
+            <div class="feature-card">
+                <h3>Hospedagem Sustentável</h3>
+                <p>Opções de acomodações com práticas sustentáveis e baixo impacto ambiental.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Experiência Local</h3>
+                <p>Viva a autêntica hospitalidade paraense com nossas opções de hospedagem familiar.</p>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Hospedagem COP-30. Todos os direitos reservados.</p>
-    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Adiciona classe para animação suave nos cards
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.animation = `fadeInUp ${0.5 + index * 0.2}s ease forwards`;
+                }, 500);
+            });
+        });
+    </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

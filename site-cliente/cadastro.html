@@ -1,0 +1,446 @@
+<html>
+
+<head>
+    <base href="https://example.com/cop30/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COP30 Belém 2025 - Cadastro de Usuário</title>
+    <style>
+        :root {
+            --primary: #1B5E20;
+            --secondary: #81C784;
+            --accent: #FBC02D;
+            --text: #212121;
+            --light: #FFFFFF;
+            --error: #D32F2F;
+            --success: #388E3C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5 url('https://images.unsplash.com/photo-1579541671172-43429ce17aca?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80') fixed;
+            background-size: cover;
+        }
+
+        .header {
+            background: rgba(27, 94, 32, 0.95);
+            backdrop-filter: blur(10px);
+            color: var(--light);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1689255816098-9443521a2e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-container {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        input,
+        select {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(27, 94, 32, 0.1);
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .password-requirements {
+            font-size: 0.875rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #2E7D32;
+        }
+
+        .terms {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .terms a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .success-message {
+            display: none;
+            background: var(--success);
+            color: var(--light);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .avatar-upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .avatar-preview {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .avatar-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+        }
+
+        #avatar-upload {
+            display: none;
+        }
+
+        .upload-btn {
+            background: var(--secondary);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <header class="header">
+        <nav class="nav">
+            <h1>COP30 Hospedagem</h1>
+            <div class="nav-links">
+                <a href="https://example.com/cop30/">Início</a>
+                <a href="https://example.com/cop30/login">Login</a>
+                <a href="https://example.com/cop30/contato">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Seja bem-vindo à COP30 Belém 2025</h1>
+            <p>Encontre a hospedagem perfeita para sua participação neste evento histórico</p>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <div class="success-message" id="success-message">
+            Cadastro realizado com sucesso! Redirecionando...
+        </div>
+
+        <h2 class="form-title">Criar Conta</h2>
+
+        <form id="signup-form" class="form-container">
+            <div class="avatar-upload">
+                <div class="avatar-preview">
+                    <img id="avatar-preview-img" src="default-avatar.svg" alt="Preview do avatar do usuário">
+                </div>
+                <div class="file-input-wrapper">
+                    <label for="avatar-upload" class="upload-btn">Escolher foto de perfil</label>
+                    <input type="file" id="avatar-upload" accept="image/*">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">Nome*</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error-message">Por favor, insira seu nome</span>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Sobrenome*</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error-message">Por favor, insira seu sobrenome</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail*</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message">Por favor, insira um e-mail válido</span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefone*</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-message">Por favor, insira um telefone válido</span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Senha*</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="password-requirements">
+                        A senha deve conter no mínimo 8 caracteres, incluindo letras maiúsculas, minúsculas e números
+                    </div>
+                    <span class="error-message">Senha não atende aos requisitos mínimos</span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Senha*</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error-message">As senhas não coincidem</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">País*</label>
+                <select id="country" name="country" required>
+                    <option value="">Selecione um país</option>
+                    <option value="BR">Brasil</option>
+                    <option value="US">Estados Unidos</option>
+                    <option value="GB">Reino Unido</option>
+                    <option value="FR">França</option>
+                    <option value="DE">Alemanha</option>
+                </select>
+                <span class="error-message">Por favor, selecione seu país</span>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    Li e aceito os <a href="https://example.com/cop30/termos">Termos de Uso</a> e a <a
+                        href="https://example.com/cop30/privacidade">Política de Privacidade</a>
+                </label>
+                <span class="error-message">Você precisa aceitar os termos para continuar</span>
+            </div>
+
+            <button type="submit" class="btn">Criar Conta</button>
+        </form>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('signup-form');
+            const avatarUpload = document.getElementById('avatar-upload');
+            const avatarPreview = document.getElementById('avatar-preview-img');
+
+            // Avatar upload preview
+            avatarUpload.addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        avatarPreview.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value.length <= 11) { // Brazilian format
+                        value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                        value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                    }
+                }
+                e.target.value = value;
+            });
+
+            // Password validation
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+
+            function validatePassword(password) {
+                const minLength = 8;
+                const hasUpperCase = /[A-Z]/.test(password);
+                const hasLowerCase = /[a-z]/.test(password);
+                const hasNumbers = /\d/.test(password);
+
+                return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumbers;
+            }
+
+            passwordInput.addEventListener('input', function () {
+                const password = this.value;
+                const errorMessage = this.nextElementSibling.nextElementSibling;
+
+                if (!validatePassword(password)) {
+                    errorMessage.style.display = 'block';
+                } else {
+                    errorMessage.style.display = 'none';
+                }
+            });
+
+            // Form submission
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Validate all fields
+                let isValid = true;
+                const requiredFields = form.querySelectorAll('[required]');
+
+                requiredFields.forEach(field => {
+                    if (!field.value) {
+                        isValid = false;
+                        field.nextElementSibling.style.display = 'block';
+                    } else {
+                        field.nextElementSibling.style.display = 'none';
+                    }
+                });
+
+                // Password match validation
+                if (passwordInput.value !== confirmPasswordInput.value) {
+                    isValid = false;
+                    confirmPasswordInput.nextElementSibling.style.display = 'block';
+                }
+
+                // Password strength validation
+                if (!validatePassword(passwordInput.value)) {
+                    isValid = false;
+                    passwordInput.nextElementSibling.nextElementSibling.style.display = 'block';
+                }
+
+                if (isValid) {
+                    // Show success message
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.style.display = 'block';
+
+                    // Simulate form submission and redirect
+                    setTimeout(() => {
+                        window.location.href = 'https://example.com/cop30/dashboard';
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
