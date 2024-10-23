@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento e Confirmação</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-lg {
+            font-size: 1.25rem;
+        }
+        .form-control {
+            border-radius: 0.5rem;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Hospedagem COP-30</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="detalhes-acomodacoes.html">Acomodação</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reserva.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pagamento.html">Pagamento</a>
+            </li>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="suporte.html">Suporte</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="cliente.html">Cliente</a>
+        </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Resumo da Reserva -->
+<div class="container mt-5">
+    <h2 class="mb-4">Confirmação de Pagamento</h2>
+
+    <!-- Detalhes da Reserva -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            Detalhes da Hospedagem
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Hotel Exemplo</h5>
+            <p class="card-text"><strong>Localização:</strong> São Paulo, Brasil</p>
+            <p class="card-text"><strong>Data de Entrada:</strong> 01/11/2024</p>
+            <p class="card-text"><strong>Data de Saída:</strong> 05/11/2024</p>
+            <p class="card-text"><strong>Preço Total:</strong> R$800</p>
+        </div>
+    </div>
+
+    <!-- Formulário de Pagamento -->
+    <div class="container">
+        <h3 class="mb-3">Escolha o Método de Pagamento</h3>
+        <form id="pagamentoForm">
+            <div class="form-group">
+                <label for="nomeCartao">Nome no Cartão</label>
+                <input type="text" class="form-control" id="nomeCartao" placeholder="Nome impresso no cartão">
+            </div>
+    
+            <div class="form-group">
+                <label for="numeroCartao">Número do Cartão</label>
+                <input type="text" class="form-control" id="numeroCartao" placeholder="Número do cartão de crédito">
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="validadeCartao">Validade</label>
+                    <input type="text" class="form-control" id="validadeCartao" placeholder="MM/AA">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="codigoSeguranca">Código de Segurança</label>
+                    <input type="text" class="form-control" id="codigoSeguranca" placeholder="CVV">
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="metodoPagamento">Método de Pagamento</label>
+                <select class="form-control" id="metodoPagamento">
+                    <option>Cartão de Crédito</option>
+                    <option>Pix</option>
+                </select>
+            </div>
+    
+            <button type="submit" class="btn btn-success btn-lg btn-block mt-4">
+                <i class="fas fa-lock"></i> Confirmar Pagamento
+            </button>
+        </form>
+    </div>
+    
+    
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    &copy; 2024 Hospedagem COP-30. Todos os direitos reservados.
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

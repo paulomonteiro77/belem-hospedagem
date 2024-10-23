@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca e Reserva de Hospedagem</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Hospedagem COP-30</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="detalhes-acomodacoes.html">Acomodação</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reserva.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pagamento.html">Pagamento</a>
+            </li>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="suporte.html">Suporte</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="cliente.html">Cliente</a>
+        </li>
+        </ul>
+    </div>
+</nav>
+   
+
+   <!-- Busca e Reservas -->
+<div class="container mt-5 p-4 bg-light rounded shadow">
+    <h2 class="text-center mb-4">Encontre a Sua Hospedagem Ideal</h2>
+    <form>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label for="dataEntrada" class="form-label">Data de Entrada</label>
+                <input type="date" class="form-control" id="dataEntrada">
+            </div>
+            <div class="col-md-4">
+                <label for="dataSaida" class="form-label">Data de Saída</label>
+                <input type="date" class="form-control" id="dataSaida">
+            </div>
+            <div class="col-md-4">
+                <label for="tipoAcomodacao" class="form-label">Tipo de Acomodação</label><br>
+                <select class="form-select" id="tipoAcomodacao">
+                    <option selected>Todos</option>
+                    <option>Hotel</option>
+                    <option>Navio</option>
+                    <option>Centro Comunitário</option>
+                    <option>Escola</option>
+                    <option>Espaço Adaptado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+            <div class="col-md-4">
+                <label for="faixaPreco" class="form-label">Faixa de Preço</label><br>
+                <select class="form-select" id="faixaPreco">
+                    <option selected>Todos</option>
+                    <option>R$100 - R$300</option>
+                    <option>R$300 - R$600</option>
+                    <option>R$600 - R$1000</option>
+                    <option>Acima de R$1000</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="localizacao" class="form-label">Localização</label>
+                <input type="text" class="form-control" id="localizacao" placeholder="Digite a cidade ou região">
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg px-5">
+                <i class="fas fa-search"></i> Buscar Hospedagem
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Resultados da Busca -->
+<div class="container mt-5">
+    <h3 class="text-center mb-4">Resultados da Busca</h3>
+    <div class="row">
+        <!-- Cartão de exemplo 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Hotel Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Hotel Exemplo</h5>
+                    <p class="card-text"><strong>Localização:</strong> São Paulo, Brasil</p>
+                    <p class="card-text"><strong>Preço:</strong> R$200 por noite</p>
+                    <a href="reserva.html" class="btn btn-success w-100"><i class="fas fa-bed"></i> Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Cartão de exemplo 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Navio Cruzeiro">
+                <div class="card-body">
+                    <h5 class="card-title">Navio Cruzeiro</h5>
+                    <p class="card-text"><strong>Localização:</strong> Rio de Janeiro, Brasil</p>
+                    <p class="card-text"><strong>Preço:</strong> R$500 por noite</p>
+                    <a href="reserva.html" class="btn btn-success w-100"><i class="fas fa-bed"></i> Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Cartão de exemplo 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="" class="card-img-top" alt="Centro Comunitário Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Centro Comunitário Exemplo</h5>
+                    <p class="card-text"><strong>Localização:</strong> Salvador, Brasil</p>
+                    <p class="card-text"><strong>Preço:</strong> R$100 por noite</p>
+                    <a href="reserva.html" class="btn btn-success w-100"><i class="fas fa-bed"></i> Reservar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    &copy; 2024 Hospedagem COP-30. Todos os direitos reservados.
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
