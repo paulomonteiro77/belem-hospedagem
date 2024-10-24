@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suporte ao Cliente</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Entrada de E-mails</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -18,7 +21,7 @@
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="gerenciar-acomodacoes.html">Cadastro</a></li>
-         
+          
           <li class="nav-item"><a class="nav-link" href="ocupacao.html">Ocupação</a></li>
           <li class="nav-item"><a class="nav-link" href="pagamentos.html">Pagamentos</a></li>
           <li class="nav-item"><a class="nav-link" href="suporte.html">Suporte</a></li>
@@ -27,17 +30,189 @@
     </div>
   </nav>
 
-  <div class="container my-4">
-    <h2>Suporte ao Cliente</h2>
-    <p>Se precisar de ajuda, entre em contato conosco pelo e-mail abaixo:</p>
-    
-    <div class="alert alert-info">
-      <strong>E-mail de Suporte:</strong> <a href="mailto:suporte@empresa.com">suporte@empresa.com</a>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Caixa de Entrada de E-mails</h2>
+        
+        <!-- Tabela de E-mails Recebidos -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th><i class="fas fa-user"></i> Remetente</th>
+                        <th><i class="fas fa-envelope"></i> E-mail</th>
+                        <th><i class="fas fa-comment"></i> Assunto</th>
+                        <th><i class="fas fa-clock"></i> Data</th>
+                        <th><i class="fas fa-cog"></i> Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>lucas soares</td>
+                        <td>solareslucas403@gmail.com</td>
+                        <td>Consulta sobre reservas</td>
+                        <td>23/10/2024</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#emailModal1"><i class="fas fa-eye"></i> Ver</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Excluir</button>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#responderModal1"><i class="fas fa-reply"></i> Responder</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>lucas vilehna</td>
+                        <td>vilhena1232@gmail.com</td>
+                        <td>Informações de pagamento</td>
+                        <td>22/10/2024</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#emailModal2"><i class="fas fa-eye"></i> Ver</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Excluir</button>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#responderModal2"><i class="fas fa-reply"></i> Responder</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>maria socorro</td>
+                        <td>mariasocorro23@gmail.com</td>
+                        <td>Dúvidas sobre serviços</td>
+                        <td>21/10/2024</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#emailModal3"><i class="fas fa-eye"></i> Ver</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Excluir</button>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#responderModal3"><i class="fas fa-reply"></i> Responder</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <p>Nosso time de suporte responderá o mais rápido possível. Agradecemos por sua paciência.</p>
-  </div>
+    <!-- Modal para Visualizar E-mail 1 -->
+    <div class="modal fade" id="emailModal1" tabindex="-1" aria-labelledby="emailModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel1">Consulta sobre reservas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>De:</strong> Cliente 1 (cliente1@email.com)</p>
+                    <p><strong>Data:</strong> 23/10/2024</p>
+                    <p><strong>Mensagem:</strong></p>
+                    <p>Olá, gostaria de saber mais sobre as reservas para o próximo mês. Quais são as opções disponíveis e os preços?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modal para Responder E-mail 1 -->
+    <div class="modal fade" id="responderModal1" tabindex="-1" aria-labelledby="responderModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="responderModalLabel1">Responder a Cliente 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="responderEmail1" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="responderEmail1" rows="4" placeholder="Digite sua resposta"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Enviar Resposta <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals para Cliente 2 e Cliente 3 (seguir o mesmo padrão) -->
+    <!-- Modal para Visualizar E-mail 2 -->
+    <div class="modal fade" id="emailModal2" tabindex="-1" aria-labelledby="emailModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel2">Informações de pagamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>De:</strong> Cliente 2 (cliente2@email.com)</p>
+                    <p><strong>Data:</strong> 22/10/2024</p>
+                    <p><strong>Mensagem:</strong></p>
+                    <p>Gostaria de saber mais sobre as formas de pagamento e as condições.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Responder E-mail 2 -->
+    <div class="modal fade" id="responderModal2" tabindex="-1" aria-labelledby="responderModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="responderModalLabel2">Responder a Cliente 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="responderEmail2" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="responderEmail2" rows="4" placeholder="Digite sua resposta"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Enviar Resposta <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Visualizar E-mail 3 -->
+    <div class="modal fade" id="emailModal3" tabindex="-1" aria-labelledby="emailModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel3">Dúvidas sobre serviços</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>De:</strong> Cliente 3 (cliente3@email.com)</p>
+                    <p><strong>Data:</strong> 21/10/2024</p>
+                    <p><strong>Mensagem:</strong></p>
+                    <p>Quais são os serviços disponíveis e como posso agendar uma consulta?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Responder E-mail 3 -->
+    <div class="modal fade" id="responderModal3" tabindex="-1" aria-labelledby="responderModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="responderModalLabel3">Responder a Cliente 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="responderEmail3" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="responderEmail3" rows="4" placeholder="Digite sua resposta"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Enviar Resposta <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
