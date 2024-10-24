@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #444; /* Cor de fundo cinza */
+  color: #fff; /* Cor do texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 300px;
+  background-color: #333; /* Cor de fundo cinza escuro */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4CAF50; /* Cor verde */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+h2 {
+  text-align: center;
+  color: #4CAF50; /* Cor verde */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #222; /* Cor de fundo cinza escuro para a navbar */
+}
+
+.nav-link {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #4CAF50; /* Cor verde */
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="cliente.html" method="POST">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>
